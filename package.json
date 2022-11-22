@@ -1,0 +1,20 @@
+{
+  "name": "sign-language-translator",
+  "version": "1.0.0",
+  "description": "Project Capstone - Penerjemah Bahasa Isyarat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team-C22-039/sign-language-translator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Team-C22-039/sign-language-translator/issues"
+  },
+  "homepage": "https://github.com/Team-C22-039/sign-language-translator#readme"
+}
