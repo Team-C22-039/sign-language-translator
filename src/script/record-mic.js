@@ -1,0 +1,1 @@
+const audio = new AudioContext();
