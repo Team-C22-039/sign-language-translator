@@ -1,11 +1,12 @@
 import React from "react";
 
 const Navbar = () => {
-  return <h1 className="text-3xl font-bold underline"> Hello World</h1>;
+  return (
+    <div className="navbar flex justify-between p-8 bg-[#9747FF]">
+      <div className="text-3xl font-[Poppins]">Product Name</div>
+      <div>Dark</div>
+    </div>
+  );
 };
 
-const Test = () => {
-  return <div className="div"></div>;
-};
-
-export { Navbar, Test };
+export { Navbar };
