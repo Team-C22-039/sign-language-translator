@@ -1,12 +1,13 @@
+/* eslint-disable */
 const MyHeader = () => {
     return (
         <nav className="bg-light-color border-gray-200 px-2 sm:px-4 py-3.5 dark:bg-dark-color">
             <div
-            className="container flex flex-wrap items-center justify-between mx-auto">
+                className="container flex flex-wrap items-center justify-between mx-auto">
                 <a href="#" className="flex items-center">
                     <span
                         className="text-white self-center text-lg font-light whitespace-nowrap dark:text-white">
-                            Sign Language Recognition
+                        Sign Language Recognition
                     </span>
                 </a>
                 <button
@@ -35,21 +36,21 @@ const MyHeader = () => {
                             <a
                                 href="#"
                                 className="block text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                                    Home
+                                Home
                             </a>
                         </li>
                         <li>
                             <a
                                 href="#"
                                 className="block text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                                    ASL Alphabet
+                                ASL Alphabet
                             </a>
                         </li>
                         <li>
                             <a
                                 href="#"
                                 className="block text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                                    About
+                                About
                             </a>
                         </li>
                     </ul>
