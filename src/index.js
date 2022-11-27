@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import 'flowbite';
+import $ from 'jquery';
+import Switch from './components/modeSwtich';
 
 /* eslint-disable */
-const header = ReactDOM.createRoot(document.getElementById('header'));
+const header = ReactDOM.createRoot(document.getElementById('head'));
 
 header.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <React.StrictMode>
+        <h2 id='product-name' className='font-Poppins text-white
+        text-xl md:text-2xl transition-all ease-in duration-200 my-3'>Product Name</h2>
+        <Switch />
+    </React.StrictMode>
 )
 
 const footer = ReactDOM.createRoot(document.getElementById('footer'));
