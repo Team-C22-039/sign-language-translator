@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
 function Main() {
   const [textResult, setTextResult] = useState("");
@@ -9,23 +10,40 @@ function Main() {
     // console.log(e.target.sentence.value);
     var textSentence = e.target.sentence.value;
     textSentence
-        .split('')
-        .filter(letter => /[a-z ]/i.test(letter))
-        .forEach((letter, index) => {
-            setTimeout(_ => {
-                letter = letter !== ' ' ? letter : 'Space'; 
-                setTextResult(letter);
-                setImageResult(`../images/Alphabet-img/`+letter+`.jpg`);
-            }, index * 1000);
-        });
+      .split("")
+      .filter((letter) => /[a-z ]/i.test(letter))
+      .forEach((letter, index) => {
+        setTimeout((_) => {
+          letter = letter !== " " ? letter : "Space";
+          setTextResult(letter);
+          setImageResult(`../images/Alphabet-img/` + letter + `.jpg`);
+        }, index * 1000);
+      });
   }
+
+  const {
+    transcript,
+    listening,
+    resetTranscript,
+    browserSupportsSpeechRecognition,
+  } = useSpeechRecognition();
+
+  if (!browserSupportsSpeechRecognition) {
+    return <span>Browser doesn't support speech recognition.</span>;
+  }
+  
 
   return (
     <div className="bg-[#E4E4E4]">
       <div className="container flex justify-around">
         <div className="flex flex-col items-center container-img border-2 border-black m-28 p-20">
-            <img src={imResult} className="h-56 w-56 aspect-square" alt="Image Result" id="imageResult" />
-            <h1>{textResult}</h1>
+          <img
+            src={imResult}
+            className="h-56 w-56 aspect-square"
+            alt="image_result"
+            id="imageResult"
+          />
+          <h1>{textResult}</h1>
         </div>
         <div className="flex-col m-28 ">
           <div className="input_container">
@@ -59,11 +77,14 @@ function Main() {
                     id="exampleFormControlTextarea1"
                     rows="3"
                     name="sentence"
-                    placeholder="Masukkan Text"/>
-                    <button
-                      className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" type="submit">
-                      Submit
-                    </button>
+                    placeholder="Masukkan Text"
+                  />
+                  <button
+                    className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
                 </form>
               </div>
             </div>
@@ -80,6 +101,43 @@ function Main() {
                 />
               </label>
             </form>
+          </div>
+
+          <div>
+            <p>Microphone : {listening ? "on" : "off"}</p>
+            <div className="flex-col space-x-2 justify-center">
+              <button
+                type="button-start"
+                className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase 
+              rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none 
+              focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                onClick={SpeechRecognition.startListening}
+              >
+                Start
+              </button>
+              <button
+                type="button-stop"
+                className="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase 
+              rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none 
+              focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out"
+                onClick={SpeechRecognition.stopListening}
+              >
+                Stop
+              </button>
+              <button
+                type="button-reset"
+                className="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase 
+              rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none 
+              focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out"
+                onClick={resetTranscript}
+              >
+                Reset
+              </button>
+
+              <p id="callback" className="mt-5">
+                {transcript}
+              </p>
+            </div>
           </div>
         </div>
       </div>
