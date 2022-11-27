@@ -1,0 +1,36 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.app {
+	height: 100vh;
+	transition-property: background-color;
+	transition-duration: 1s;
+	transition-timing-function: linear;
+	/* No transition delay */
+}
+
+.light {
+	background-color: white;
+	color: black;
+}
+
+.dark {
+	background-color: #05040f;
+	color: white;
+}
+
+h1 {
+	font-family: Cambria;
+	text-align: center;
+	padding: 50px;
+}
+
+.btn-box {
+	text-align: center;
+}
+
+button {
+	padding: 10px;
+}
