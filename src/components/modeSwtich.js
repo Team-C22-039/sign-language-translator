@@ -40,7 +40,7 @@ export default function Switch() {
             id="toggle"
             className="w-[50px] p-[5px] block bg-white rounded-full
             cursor-pointer shadow-lg transition-all ease-in duration-[0.2s]
-            fixed right-5 top-9"
+            fixed right-5 top-7"
             onClick={() => darkMode === false ? setDarkMode(true) : setDarkMode(false)}
         >
             <div id="toggle-inner" className="
