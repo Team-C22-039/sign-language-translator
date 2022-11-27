@@ -38,7 +38,7 @@ export default function Switch() {
     return (
         <div
             id="toggle"
-            className="w-[50px] p-[5px] flex block bg-white rounded-full
+            className="w-[50px] p-[5px] block bg-white rounded-full
             cursor-pointer shadow-lg transition-all ease-in duration-[0.2s]
             fixed right-5 top-9"
             onClick={() => darkMode === false ? setDarkMode(true) : setDarkMode(false)}
