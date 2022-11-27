@@ -6,6 +6,10 @@ module.exports = {
     ],
     theme: {
         extend: {
+            fontFamily: {
+                "Poppins": ["Poppins", "sans-serif"],
+                "Roboto": ["Roboto", "sans-serif"]
+            },
             colors: {
                 'light-color': '#9747FF',
                 'dark-color': '#3B2166',
