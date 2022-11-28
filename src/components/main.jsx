@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
 
 function Main() {
   const [textResult, setTextResult] = useState("");
@@ -31,7 +33,27 @@ function Main() {
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
   }
-  
+
+  function updateInput() {
+    document.getElementById("input-text").value = transcript;
+  }
+
+  function startListen() {
+    SpeechRecognition.startListening({
+      continuous: true,
+      language: "id",
+    });
+  }
+
+  function stopListen() {
+    SpeechRecognition.stopListening();
+    updateInput();
+  }
+
+  function resetInput() {
+    resetTranscript();
+    document.getElementById("input-text").value = "";
+  }
 
   return (
     <div className="bg-[#E4E4E4]">
@@ -51,7 +73,7 @@ function Main() {
               <div className="mb-3 xl:w-96">
                 <form onSubmit={handleSubmit}>
                   <label
-                    htmlFor="exampleFormControlTextarea1"
+                    htmlFor="input-text"
                     className="form-label inline-block mb-2 text-gray-700"
                   >
                     Text ke Gambar :
@@ -74,7 +96,7 @@ function Main() {
                       m-0
                       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                     "
-                    id="exampleFormControlTextarea1"
+                    id="input-text"
                     rows="3"
                     name="sentence"
                     placeholder="Masukkan Text"
@@ -111,7 +133,7 @@ function Main() {
                 className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase 
               rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none 
               focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                onClick={SpeechRecognition.startListening}
+                onClick={startListen}
               >
                 Start
               </button>
@@ -120,7 +142,7 @@ function Main() {
                 className="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase 
               rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none 
               focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out"
-                onClick={SpeechRecognition.stopListening}
+                onClick={stopListen}
               >
                 Stop
               </button>
@@ -129,14 +151,10 @@ function Main() {
                 className="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase 
               rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none 
               focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out"
-                onClick={resetTranscript}
+                onClick={resetInput}
               >
                 Reset
               </button>
-
-              <p id="callback" className="mt-5">
-                {transcript}
-              </p>
             </div>
           </div>
         </div>
