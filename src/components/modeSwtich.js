@@ -13,11 +13,11 @@ export default function Switch() {
 
     React.useEffect(() => {
         const body = document.body
-        $(body).addClass('bg-[#E4E4E4] transition-colors ease--in-out duration-300')
+        $(body).addClass('bg-[#E4E4E4] transition-colors ease--in-out duration-300 scroll-smooth')
         const header = document.getElementById('head');
         $(header).addClass('bg-[#9747FF] p-5 transition-colors ease-in-out duration-300 flex')
         const footer = document.getElementById('foot')
-        $(footer).addClass('transition-all ease-in-out duration-300 bg-[#9747FF] text-white flex flex-col min-h-[25vh]')
+        $(footer).addClass('transition-all ease-in-out duration-300 bg-[#9747FF] text-white flex flex-col min-h-[100vh]')
         const toggle_ball = document.querySelector('#toggle-inner')
         const toggle_box = document.querySelector('#toggle')
         const img = document.querySelector('#image-box')
@@ -40,6 +40,8 @@ export default function Switch() {
             $(body).removeClass('bg-[#202020] text-white')
             $(header).removeClass('bg-[#3B2166]')
             $(toggle_box).removeClass('drop-shadow-[0_0_7px_rgba(255,255,255,0.7)]')
+            $(img).removeClass('drop-shadow-[0_0_7px_rgba(255,255,255,0.4)]')
+            $(img).addClass('drop-shadow-[0_0_7px_rgba(0,0,0,0.4)]')
             $(toggle_ball).removeClass('ml-[20px] md:ml-[42px]')
             $(footer).removeClass('bg-[#3B2166]')
         }
