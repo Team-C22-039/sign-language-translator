@@ -70,8 +70,6 @@ function Main() {
     return <span>Browser doesn't support speech recognition.</span>;
   }
 
-  
-  
   return (
     <div className="bg-[#E4E4E4]">
       <div className="flex lg:flex-row md:flex-col flex-col justify-around">
