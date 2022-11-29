@@ -51,7 +51,7 @@ export default function Switch() {
         <div
             id="toggle"
             className="w-[50px] md:w-[100px] p-[5px] md:py-2 md:flex block bg-white rounded-full
-            fixed right-5 md:right-4 top-6 md:top-4 drop-shadow-[0_0_7px_rgba(0,0,0,0.7)]
+            absolute right-5 md:right-4 top-6 md:top-4 drop-shadow-[0_0_7px_rgba(0,0,0,0.7)]
             transition-all ease-out duration-500"
             onClick={() => darkMode === false ? setDarkMode(true) : setDarkMode(false)}
         >

@@ -7,7 +7,7 @@ import Switch from './components/modeSwtich'
 import ImageOutput from './components/imageOutput'
 import Creator from './components/creator'
 import Copyright from './components/copyright'
-import MicInput from './components/micBtn'
+import TextInput from './components/textInput'
 
 /* eslint-disable */
 const header = ReactDOM.createRoot(document.getElementById('head'));
@@ -24,8 +24,14 @@ const main = ReactDOM.createRoot(document.getElementById("content"));
 
 main.render(
     <React.StrictMode>
-        <ImageOutput />
-        <MicInput />
+        <div className='flex gap-x-10 mx-auto justify-evenly'>
+            <ImageOutput className="relative left-0" />
+            <hr className='h-[20px]' />
+            <TextInput />
+        </div>
+        <div>
+
+        </div>
     </React.StrictMode>
 )
 
