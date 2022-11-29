@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 
 
 function Main() {
@@ -100,23 +100,18 @@ function Main() {
   
   return (
     <div className="bg-[#E4E4E4]">
-      <div className="container flex lg:flex-row sm:flex-col md:flex-col justify-around">
-        <div className="flex flex-col items-center container-img border-2 border-black m-28 p-20">
-          <img
-            src={imResult}
-            className="h-56 w-56 aspect-square"
-            alt="image_result"
-            id="imageResult"
-          />
-          <h1>{textResult}</h1>
+      <div className="flex lg:flex-row md:flex-col flex-col justify-around">
+        <div className="flex flex-col items-center container-img border-2 border-black m-28 lg:p-20">
+            <img src={imResult} className="h-56 w-56 aspect-square" alt="Image Result" id="imageResult" />
+            <h1>{textResult}</h1>
         </div>
-        <div className="flex-col m-28 ">
+        <div className="flex-col lg:m-28 md:m-0">
           <div className="input_container">
             <div className="flex justify-center">
               <div className="mb-3 xl:w-96">
                 <div id="microphone">
-                  <p>Microphone : {listening ? "on" : "off"}</p>
-                  <div className="flex-col space-x-2 justify-center">
+                  <p className="text-center lg:text-start">Microphone : {listening ? "on" : "off"}</p>
+                  <div className="flex flex-row space-x-2 justify-center lg:justify-start">
                     <button
                       type="button-start"
                       className={ listening ? 
