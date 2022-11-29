@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
+
 function Main() {
   const [isListening, setIsListening] = useState(false);
   const [textResult, setTextResult] = useState("");
@@ -50,15 +51,47 @@ function Main() {
   const convertToSign = (word) => {
     var textSentence = word;
     textSentence
-        .split('')
-        .filter(letter => /[a-z ]/i.test(letter))
-        .forEach((letter, index) => {
-            setTimeout(_ => {
-                letter = letter !== ' ' ? letter : 'Space'; 
-                setTextResult(letter);
-                setImageResult(`../images/Alphabet-img/`+letter+`.jpg`);
-            }, index * 1000);
-        });
+      .split("")
+      .filter((letter) => /[a-z ]/i.test(letter))
+      .forEach((letter, index) => {
+        setTimeout((_) => {
+          letter = letter !== " " ? letter : "Space";
+          setTextResult(letter);
+          setImageResult(`../images/Alphabet-img/` + letter + `.jpg`);
+        }, index * 1000);
+      });
+  }
+
+  const {
+    transcript,
+    listening,
+    resetTranscript,
+    browserSupportsSpeechRecognition,
+  } = useSpeechRecognition();
+
+  if (!browserSupportsSpeechRecognition) {
+    return <span>Browser doesn't support speech recognition.</span>;
+  }
+
+  function updateInput() {
+    document.getElementById("input-text").value = transcript;
+  }
+
+  function startListen() {
+    SpeechRecognition.startListening({
+      continuous: true,
+      language: "id",
+    });
+  }
+
+  function stopListen() {
+    SpeechRecognition.stopListening();
+    updateInput();
+  }
+
+  function resetInput() {
+    resetTranscript();
+    document.getElementById("input-text").value = "";
   }
 
   if (!browserSupportsSpeechRecognition) {
@@ -69,8 +102,13 @@ function Main() {
     <div className="bg-[#E4E4E4]">
       <div className="container flex lg:flex-row sm:flex-col md:flex-col justify-around">
         <div className="flex flex-col items-center container-img border-2 border-black m-28 p-20">
-            <img src={imResult} className="h-56 w-56 aspect-square" alt="Image Result" id="imageResult" />
-            <h1>{textResult}</h1>
+          <img
+            src={imResult}
+            className="h-56 w-56 aspect-square"
+            alt="image_result"
+            id="imageResult"
+          />
+          <h1>{textResult}</h1>
         </div>
         <div className="flex-col m-28 ">
           <div className="input_container">
@@ -103,7 +141,7 @@ function Main() {
                 </div>
                 <form onSubmit={handleSubmit} className="my-5 flex flex-col">
                   <label
-                    htmlFor="exampleFormControlTextarea1"
+                    htmlFor="input-text"
                     className="form-label inline-block mb-2 text-gray-700"
                   >
                     Text ke Gambar :
