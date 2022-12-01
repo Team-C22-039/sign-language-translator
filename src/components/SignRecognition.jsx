@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import * as tf from "@tensorflow/tfjs";
 
+async function runModel() {
+    const model = await tf.loadLayersModel("../../tfjs_model/model.json");
+    
+    console.log(model.summary());
+    console.log('Model Loaded Successfully');
+}
+
 const SignRecognition = () => {
     const [selectedFile, setSelectedFile] = useState();
     const [preview, setPreview] = useState()
@@ -33,6 +40,13 @@ const SignRecognition = () => {
                 <p className="font-normal text-5xl p-10">
                     ASL Alphabet
                 </p>
+                <button
+                    type="button-reset"
+                    className="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out"
+                    onClick={runModel}
+                    >
+                        Run Model
+                </button>
             </div>
 
             <div id="signRecognition">
