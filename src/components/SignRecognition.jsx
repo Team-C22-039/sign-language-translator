@@ -116,9 +116,18 @@ const SignRecognition = () => {
                     </label>
                     </form>
                     {selectedFile &&  <img src={preview} className="h-48 w-96 object-contain" /> }
-                    <p className="font-normal text-2xl p-5">
-                        Result: {predictedClass}
-                    </p>
+                    <div className="flex">
+                        <p className="font-normal text-2xl p-5">
+                            Result: {predictedClass}
+                        </p>
+                        <div className={loading ? "flex justify-center items-center" : "flex justify-center items-center hidden"}>
+                            <div className="loader bg-white p-4 rounded-full flex space-x-2">
+                                <div className="w-2 h-2 bg-gray-800 rounded-full animate-bounce"></div>
+                                <div className="w-2 h-2 bg-gray-800 rounded-full animate-bounce"></div>
+                                <div className="w-2 h-2 bg-gray-800 rounded-full animate-bounce"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
