@@ -96,12 +96,12 @@ const SignRecognition = () => {
         <div className="h-screen bg-gray-300 text-center">
             <div id="titleText">
                 <p className="font-normal text-5xl p-10">
-                    ASL Alphabet
+                    ASL Sign Recognition
                 </p>
             </div>
 
-            <div id="signRecognition">
-                <div className="upload flex flex-col items-center justify-center ">
+            <div id="signRecognition" className="flex sm:flex-col lg:flex-row lg:m-20 items-center justify-center">
+                <div className="upload flex flex-col items-center justify-start basis-3/4">
                     <form className="space-x-6">
                     <div className="shrink-0"></div>
                     <label className="block">
@@ -116,9 +116,11 @@ const SignRecognition = () => {
                     </label>
                     </form>
                     {selectedFile &&  <img src={preview} className="h-48 w-96 object-contain" /> }
+                    
+                    {/* Loader Animation */}
                     <div className="flex">
                         <p className="font-normal text-2xl p-5">
-                            Result: {predictedClass}
+                            Hasil: {predictedClass}
                         </p>
                         <div className={loading ? "flex justify-center items-center" : "flex justify-center items-center hidden"}>
                             <div className="loader bg-white p-4 rounded-full flex space-x-2">
@@ -128,6 +130,17 @@ const SignRecognition = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="" id="signRecogRules">
+                    <div id="" className="">
+                        <p className="font-semibold text-2xl py-5 text-start">
+                            Catatan: 
+                        </p>
+                    </div>
+                    <ul className="list-disc list-outside text-start">
+                        <li>Model masih belum mampu memprediksi secara akurat dikarenakan minimnya data pada dataset</li>
+                        <li>Pastikan background untuk memfoto bentuk tangan berwarna putih</li>
+                    </ul>
                 </div>
             </div>
         </div>
