@@ -11,9 +11,9 @@ import "./ASLAlphabet.css";
 
 const ASLAlphabet = () => {
     return (
-        <div className="bg-gray-200 text-center p-16 h-auto">
+        <div className="bg-gray-200 text-center p-16 h-screen">
             <div id="titleText">
-                <p className="font-normal text-5xl px-10">
+                <p className="font-normal text-4xl lg:text-5xl px-10">
                     ASL Alphabet
                 </p>
                 <p className="font-normal text-xl p-2">

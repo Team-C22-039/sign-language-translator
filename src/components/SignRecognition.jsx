@@ -93,14 +93,14 @@ const SignRecognition = () => {
     }
 
     return (
-        <div className="h-screen bg-gray-300 text-center">
+        <div className="h-screen bg-gray-300 text-center p-16">
             <div id="titleText">
-                <p className="font-normal text-5xl p-10">
+                <p className="font-normal text-4xl lg:text-5xl px-10">
                     ASL Sign Recognition
                 </p>
             </div>
 
-            <div id="signRecognition" className="flex sm:flex-col lg:flex-row lg:m-20 items-center justify-center">
+            <div id="signRecognition" className="flex flex-col lg:flex-row lg:m-20 items-center justify-center">
                 <div className="upload flex flex-col items-center justify-start basis-3/4">
                     <form className="space-x-6">
                     <div className="shrink-0"></div>
@@ -133,7 +133,7 @@ const SignRecognition = () => {
                 </div>
                 <div className="" id="signRecogRules">
                     <div id="" className="">
-                        <p className="font-semibold text-2xl py-5 text-start">
+                        <p className="font-semibold text-2xl py-5 text-center lg:text-start">
                             Catatan: 
                         </p>
                     </div>

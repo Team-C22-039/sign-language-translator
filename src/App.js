@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       <Main />
       <ASLAlphabet />
-      {/* <SignRecognition /> */}
+      <SignRecognition />
     </div>
   );
 }
