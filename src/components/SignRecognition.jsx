@@ -93,15 +93,15 @@ const SignRecognition = () => {
     }
 
     return (
-        <div className="h-screen bg-gray-300 text-center">
+        <div className="h-screen bg-gray-300 text-center p-16">
             <div id="titleText">
-                <p className="font-normal text-5xl p-10">
-                    ASL Alphabet
+                <p className="font-normal text-4xl lg:text-5xl px-10">
+                    ASL Sign Recognition
                 </p>
             </div>
 
-            <div id="signRecognition">
-                <div className="upload flex flex-col items-center justify-center ">
+            <div id="signRecognition" className="flex flex-col lg:flex-row lg:m-20 items-center justify-center">
+                <div className="upload flex flex-col items-center justify-start basis-3/4">
                     <form className="space-x-6">
                     <div className="shrink-0"></div>
                     <label className="block">
@@ -116,9 +116,31 @@ const SignRecognition = () => {
                     </label>
                     </form>
                     {selectedFile &&  <img src={preview} className="h-48 w-96 object-contain" /> }
-                    <p className="font-normal text-2xl p-5">
-                        Result: {predictedClass}
-                    </p>
+                    
+                    {/* Loader Animation */}
+                    <div className="flex">
+                        <p className="font-normal text-2xl p-5">
+                            Hasil: {predictedClass}
+                        </p>
+                        <div className={loading ? "flex justify-center items-center" : "flex justify-center items-center hidden"}>
+                            <div className="loader bg-white p-4 rounded-full flex space-x-2">
+                                <div className="w-2 h-2 bg-gray-800 rounded-full animate-bounce"></div>
+                                <div className="w-2 h-2 bg-gray-800 rounded-full animate-bounce"></div>
+                                <div className="w-2 h-2 bg-gray-800 rounded-full animate-bounce"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="" id="signRecogRules">
+                    <div id="" className="">
+                        <p className="font-semibold text-2xl py-5 text-center lg:text-start">
+                            Catatan: 
+                        </p>
+                    </div>
+                    <ul className="list-disc list-outside text-start">
+                        <li>Model masih belum mampu memprediksi secara akurat dikarenakan minimnya data pada dataset</li>
+                        <li>Pastikan background untuk memfoto bentuk tangan berwarna putih</li>
+                    </ul>
                 </div>
             </div>
         </div>
