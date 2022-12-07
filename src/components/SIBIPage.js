@@ -20,7 +20,7 @@ export default function MainContent() {
             </div>
             <div className="flex flex-col md:flex-row md:gap-x-[2rem] items-center">
                 <img src="https://i.ibb.co/6D2grrg/image1.jpg" alt="BISINDO_2"
-                    className="w-[90vw] block md:hidden" a />
+                    className="w-[90vw] block md:hidden" />
                 <div className="text-justify md:text-right items-start w-[90vw]">
                     <h2 className="md:text-4xl md:font-bold md:tracking-wider duration-300 my-4 font-semibold text-2xl">Fungsi Bahasa Isyarat</h2>
                     <p className="duration-300 md:text-lg text-base">
