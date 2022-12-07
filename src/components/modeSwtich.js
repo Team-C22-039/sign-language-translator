@@ -26,7 +26,7 @@ export default function Switch() {
 
         // If dark mode is enabled - adds classes to update dark-mode styling.
         // Else, removes and styling is as normal.
-        if (darkMode === true) {
+        if (darkMode) {
             localStorage.setItem('theme', 'dark')
             $(body).removeClass('bg-[#E4E4E4]')
             $(body).addClass('bg-[#202020] text-white')
