@@ -3,7 +3,7 @@ import React from "react";
 export default function FileInput() {
     return (
         <div>
-            <label for="input-file">
+            <label htmlFor="input-file">
                 <span className="sr-only">Choose Audio File</span>
                 <input type="file" className="block text-[12px] bg-black rounded-md p-2 pl-3
                 text-white w-full
