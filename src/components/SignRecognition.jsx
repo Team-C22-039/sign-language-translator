@@ -13,7 +13,7 @@ const SignRecognition = () => {
     useEffect(() => {
         // Load Model
         const runModel = async() => {
-            const model = await tf.loadLayersModel("../../tfjs_model/model.json");
+            const model = await tf.loadLayersModel("../../tfjs_2_64/model.json");
             setModel(model);
             // console.log(model.summary());
             // console.log('Model Loaded Successfully');
@@ -77,7 +77,7 @@ const SignRecognition = () => {
             const image = await createHTMLImageElement(imageSrc);
 
             const [predictedClass] = tf.tidy(() => {
-                const tensorImg = tf.browser.fromPixels(image).resizeNearestNeighbor([32,32]).toFloat().expandDims();
+                const tensorImg = tf.browser.fromPixels(image).resizeNearestNeighbor([224,224]).toFloat().expandDims();
                 const result = model.predict(tensorImg);
 
                 // console.log(tf.argMax(result));
