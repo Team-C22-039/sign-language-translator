@@ -14,11 +14,11 @@ import MainContent from './components/SIBIPage'
 const header = ReactDOM.createRoot(document.getElementById('head'));
 
 header.render(
-    <React.StrictMode>
+    <>
         <h2 id='product-name' className='font-Poppins text-white
         text-sm sm:text-xl md:text-3xl transition-all ease-in duration-200 my-1 float-left'>Sign Language Translator</h2>
         <Switch />
-    </React.StrictMode>
+    </>
 )
 
 const main = ReactDOM.createRoot(document.getElementById("content"));
@@ -38,7 +38,7 @@ main.render(
 const footer = ReactDOM.createRoot(document.getElementById('foot'));
 
 footer.render(
-    <React.StrictMode>
+    <>
         <h2 className='text-2xl md:text-3xl mx-4 my-5 md:my-5 font-Poppins transition-all ease-in-out duration-300 text-white'>Creator</h2>
         <div className='flex flex-col md:flex-row md:flex-wrap text-base md:text-lg mx-4 gap-x-[100px] md:my-[-6px]
         transition-all ease-in-out duration-300'>
@@ -52,5 +52,5 @@ footer.render(
             <BsGithub className='mx-2 text-2xl text-white hover:text-[#DFDFDF]' />
         </div>
         <Copyright />
-    </React.StrictMode>
+    </>
 )
