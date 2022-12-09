@@ -7,7 +7,6 @@ import { BsFillMicFill } from "react-icons/bs";
 
 export default function MicInput(props) {
     const inputText = document.querySelector('#text-input')
-    const mic = document.querySelector('#mic-input')
     const [isListening, setIsListening] = useState(false)
 
     const {
@@ -21,26 +20,21 @@ export default function MicInput(props) {
         SpeechRecognition.startListening({ language: 'id-ID', continuous: true })
     }
 
-    const handleRecord = () => {
-        $(mic).click(() => {
-            setIsListening((isListening) => !isListening)
-        })
+    useEffect(() => {
         if (isListening) {
-            console.log('Microphone active')
+            console.log(listening)
             resetTranscript()
             startListening()
-            $('#mic-logo').addClass('text-red')
+            $('#mic-logo').addClass('text-red-700')
             $('#mic-logo').removeClass('text-black')
-        } else {
-            console.log('Microphone deactivate')
+        } else if (!isListening) {
+            console.log(listening)
             SpeechRecognition.stopListening()
-            $(inputText).val(transcript);
+            $('#mic-logo').removeClass('text-red-700')
+            $('#mic-logo').addClass('text-black')
+            $(inputText).val(transcript)
         }
-    }
-
-    useEffect(() => {
-        handleRecord()
-    }, [isListening])
+    }, [isListening, inputText, resetTranscript, transcript, listening])
 
     if (!browserSupportsSpeechRecognition) {
 
@@ -52,7 +46,7 @@ export default function MicInput(props) {
     return (
         <>
             <button id="mic-input" className="p-2 md:p-3 bg-slate-100 h-min w-min border-[1px] border-black rounded-lg md:rounded-xl
-        hover:bg-slate-200 active:bg-slate-400 cursor-pointer transition-all ease-in duration-100">
+        hover:bg-slate-200 active:bg-slate-400 cursor-pointer transition-all ease-in duration-100" onClick={() => { setIsListening((isListening) => !isListening) }}>
                 <BsFillMicFill id="mic-logo" className="text-lg md:text-2xl text-black" />
             </button>
         </>
