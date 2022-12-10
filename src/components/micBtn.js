@@ -22,19 +22,17 @@ export default function MicInput(props) {
 
     useEffect(() => {
         if (isListening) {
-            console.log(listening)
             resetTranscript()
             startListening()
             $('#mic-logo').addClass('text-red-700')
-            $('#mic-logo').removeClass('text-black')
+            $('#mic-logo').removeClass('text-white')
         } else if (!isListening) {
-            console.log(listening)
             SpeechRecognition.stopListening()
             $('#mic-logo').removeClass('text-red-700')
-            $('#mic-logo').addClass('text-black')
+            $('#mic-logo').addClass('text-white')
             $(inputText).val(transcript)
         }
-    }, [isListening, inputText, resetTranscript, transcript, listening])
+    }, [isListening, inputText, resetTranscript, transcript])
 
     if (!browserSupportsSpeechRecognition) {
 
@@ -45,9 +43,21 @@ export default function MicInput(props) {
 
     return (
         <>
-            <button id="mic-input" className="p-2 md:p-3 bg-slate-100 h-min w-min border-[1px] border-black rounded-lg md:rounded-xl
-        hover:bg-slate-200 active:bg-slate-400 cursor-pointer transition-all ease-in duration-100" onClick={() => { setIsListening((isListening) => !isListening) }}>
-                <BsFillMicFill id="mic-logo" className="text-lg md:text-2xl text-black" />
+            <button id="mic-input" className="
+            transition-all 0.3 ease-linear
+            h-fit w-fit text-white p-4 bg-transparent cursor-pointer rounded-lg inline-block relative outline-none
+            border-none bg-gradient-to-br from-[rgba(114,199,255,1)0%] to-[rgba(72,159,216,1)100%] overflow-hidden
+            hover:opacity-[0.7] hover:text-white
+            before:absolute before:content-[''] before:inline-block
+            before:top-[-180px] before:left-0 before:w-[30px] before:h-full
+            before:bg-white before:animate-shiny
+            shinyBtn
+            " onClick={() => {
+                    setIsListening((isListening) => !isListening)
+                    console.log(!listening ? 'Microphone on' : 'Microphone off')
+                }}>
+                <BsFillMicFill id="mic-logo" className="text-lg md:text-2xl " />
+                <div id="dot"></div>
             </button>
         </>
     )
