@@ -14,9 +14,7 @@ export default function Switch() {
         $(body).addClass(`bg-[#E4E4E4] transition-colors ease--in-out duration-300 scroll-smooth scrollbar-thin scrollbar-track-[#BFBFBF]
         scrollbar-thumb-[#ffffff]`)
         const header = document.getElementById('head');
-        $(header).addClass(`bg-[#498BC1] p-5 transition-colors ease-in-out duration-300 flex`)
-        const footer = document.getElementById('foot')
-        $(footer).addClass(`transition-all ease-in-out duration-300 bg-[#498BC1] flex flex-col min-h-[21vh]`)
+        $(header).addClass('bg-[#58A9E8] p-5 transition-colors ease-in-out duration-300 flex')
         const toggle_ball = document.querySelector('#toggle-inner')
         const toggle_box = document.querySelector('#toggle')
         const img = document.querySelector('#image-box')
@@ -28,9 +26,7 @@ export default function Switch() {
         // Else, removes and styling is as normal.
         if (darkMode) {
             localStorage.setItem('theme', 'dark')
-            $(body).removeClass('bg-[#E4E4E4]')
             $(body).addClass('bg-[#202020] text-white')
-            $(header).addClass('bg-[#79A9D1]')
             $(toggle_box).addClass('drop-shadow-[0_0_7px_rgba(255,255,255,0.7)] bg-black')
             $(toggle_box).removeClass('drop-shadow-[0_0_7px_rgba(0,0,0,0.7)] bg-white')
             $(toggle_ball).addClass('ml-[20px] md:ml-[42px] bg-white')
@@ -38,19 +34,18 @@ export default function Switch() {
             $(moon).addClass('opacity-100')
             $(moon).removeClass('opacity-0')
             $(sun).addClass('opacity-0')
-            $(img).addClass('drop-shadow-[0_0_7px_rgba(255,255,255,0.4)]')
-            $(img).removeClass('drop-shadow-[0_0_7px_rgba(0,0,0,0.4)]')
+            $(img).addClass('drop-shadow-[2px_2px_10px_rgba(255,255,255,0.6)]')
+            $(img).removeClass('drop-shadow-[2px_2px_10px_rgba(0,0,0,0.6)]')
             $(inpBox).addClass('drop-shadow-[0_0_7px_rgba(255,255,255,0.2)]')
             $(inpBox).removeClass('drop-shadow-[0_0_7px_rgba(0,0,0,0.2)]')
-            $(footer).addClass('bg-[#79A9D1]')
+            // $(footer).addClass('bg-[#79A9D1]')
         } else {
             localStorage.setItem('theme', 'light')
             $(body).removeClass('bg-[#202020] text-white')
-            $(header).removeClass('bg-[#79A9D1]')
             $(toggle_box).removeClass('drop-shadow-[0_0_7px_rgba(255,255,255,0.7)] bg-black')
             $(toggle_box).addClass('drop-shadow-[0_0_7px_rgba(0,0,0,0.7)] bg-white')
-            $(img).removeClass('drop-shadow-[0_0_7px_rgba(255,255,255,0.4)]')
-            $(img).addClass('drop-shadow-[0_0_7px_rgba(0,0,0,0.4)]')
+            $(img).removeClass('drop-shadow-[2px_2px_10px_rgba(255,255,255,0.6)]')
+            $(img).addClass('drop-shadow-[2px_2px_10px_rgba(0,0,0,0.6)]')
             $(inpBox).addClass('drop-shadow-[0_0_7px_rgba(0,0,0,0.2)]')
             $(inpBox).removeClass('drop-shadow-[0_0_7px_rgba(255,255,255,0.2)]')
             $(toggle_ball).removeClass('ml-[20px] md:ml-[42px] bg-white')
@@ -58,7 +53,7 @@ export default function Switch() {
             $(moon).addClass('opacity-0')
             $(moon).removeClass('opacity-100')
             $(sun).removeClass('opacity-0')
-            $(footer).removeClass('bg-[#79A9D1]')
+            // $(footer).removeClass('bg-[#79A9D1]')
         }
     }, [darkMode])
 
