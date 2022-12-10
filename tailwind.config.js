@@ -8,6 +8,29 @@ module.exports = {
     ],
     theme: {
         extend: {
+            keyframes: {
+                shiny: {
+                    '0%': {
+                        transform: 'scale(0) rotate(45deg)',
+                        opacity: '0'
+                    },
+                    '60%': {
+                        transform: 'scale(0) rotate(45deg)',
+                        opacity: '0.5'
+                    },
+                    '61%': {
+                        transform: 'scale(4) rotate(45deg)',
+                        opacity: '1'
+                    },
+                    '100%': {
+                        transform: 'scale(50) rotate(45deg)',
+                        opacity: '0'
+                    }
+                }
+            },
+            animation: {
+                shiny: 'shiny 3s ease-in-out infinite'
+            },
             fontFamily: {
                 "Poppins": ["Poppins", "sans-serif"],
                 "Roboto": ["Roboto", "sans-serif"]
