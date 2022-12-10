@@ -2,8 +2,10 @@ import React from "react";
 
 export default function ImageOutput(props) {
     return (
-        <div id="image-box" className="h-[50vh] min-w-max sm:mx-auto sm:h-[60vh] sm:w-max md:h-[65vh] md:w-[80vw] xl:h-[70vh] xl:w-[45vw] mb-14 bg-slate-400 rounded-lg 
-        drop-shadow-[0_0_7px_rgba(0,0,0,0.4)] transition-all ease-out duration-300">
+        <div className="w-full h-max mx-auto sm:mx-0">
+            <div id="image-box" className="h-[50vh] p-20 mx-5 drop-shadow-[2px_2px_10px_rgba(0,0,0,0.6)] bg-slate-600 rounded-lg  transition-all ease-out duration-300">
+                {/* <div className="bg-white p-20 m-20"></div> */}
+            </div>
             {/* <video width="720" height="720" controls>
                 <source src="{props.video}" type="video/mp4" />
                 Your browser doesn't support video tag
