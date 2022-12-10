@@ -3,12 +3,12 @@ import 'flowbite'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BsGithub } from "react-icons/bs"
-import Switch from './components/modeSwtich'
-import ImageOutput from './components/imageOutput'
-import Creator from './components/creator'
-import InputBox from './components/inputBox'
+import Switch from './components/ModeSwtich'
+import ImageOutput from './components/ImageOutput'
+import Creator from './components/Creator'
+import InputBox from './components/InputBox'
 import MainContent from './components/SIBIPage'
-import BgWave from './components/footerWave'
+import BgWave from './components/FooterWave'
 
 /* eslint-disable */
 const header = ReactDOM.createRoot(document.getElementById('head'));

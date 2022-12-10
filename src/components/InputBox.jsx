@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import $ from 'jquery'
 import { BsFillVolumeUpFill } from "react-icons/bs"
-import MicInput from "./micBtn"
+import MicInput from "./MicBtn"
 
 export default function InputBox(props) {
     const content = document.getElementById('content');

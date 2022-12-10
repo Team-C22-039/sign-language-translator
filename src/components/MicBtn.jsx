@@ -1,4 +1,3 @@
-// /*eslint-disable */
 import React, { useState, useEffect } from "react";
 import $ from 'jquery';
 import 'regenerator-runtime/runtime';
@@ -35,7 +34,6 @@ export default function MicInput(props) {
     }, [isListening, inputText, resetTranscript, transcript])
 
     if (!browserSupportsSpeechRecognition) {
-
         return (
             <></>
         )
