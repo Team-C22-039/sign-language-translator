@@ -6,9 +6,9 @@ import { BsGithub } from "react-icons/bs"
 import Switch from './components/modeSwtich'
 import ImageOutput from './components/imageOutput'
 import Creator from './components/creator'
-import Copyright from './components/copyright'
 import InputBox from './components/inputBox'
 import MainContent from './components/SIBIPage'
+import BgWave from './components/footerWave'
 
 /* eslint-disable */
 const header = ReactDOM.createRoot(document.getElementById('head'));
@@ -25,7 +25,7 @@ const main = ReactDOM.createRoot(document.getElementById("content"));
 
 main.render(
     <React.StrictMode>
-        <div className='flex flex-col xl:flex-row mx-3 md:mx-auto justify-evenly'>
+        <div className='flex flex-col xl:flex-row sm:gap-x-12 gap-y-[40px] justify-evenly transition-all ease-in duration-200'>
             <ImageOutput />
             <InputBox />
         </div>
@@ -39,18 +39,22 @@ const footer = ReactDOM.createRoot(document.getElementById('foot'));
 
 footer.render(
     <>
-        <h2 className='text-2xl md:text-3xl mx-4 my-5 md:my-5 font-Poppins transition-all ease-in-out duration-300 text-white'>Creator</h2>
-        <div className='flex flex-col md:flex-row md:flex-wrap text-base md:text-lg mx-4 gap-x-[100px] md:my-[-6px]
-        transition-all ease-in-out duration-300'>
-            {/* <h2 className="text-xl md:text-4xl">Creator</h2> */}
-            <Creator creator="Nico Siahaan" />
-            <Creator creator="Asyqor Thoriq" />
-            <Creator creator="Rayhanantha Akbar Putra Prasetyo" />
-            <Creator creator="Grivia Trifosa Iskandar" />
+        <BgWave />
+        <div className='content'>
+            <h2 className='text-[2.5rem] md:text-[3.5rem] ml-4 font-Poppins transition-all ease-in-out duration-300'>Creator</h2>
+            <div className='flex flex-col md:flex-row md:flex-wrap text-base md:text-lg mx-4 gap-x-[100px] md:my-[-6px]
+            transition-all ease-in-out duration-300'>
+                <Creator creator="Nico Siahaan" />
+                <Creator creator="Asyqor Thoriq" />
+                <Creator creator="Rayhanantha Akbar Putra Prasetyo" />
+                <Creator creator="Grivia Trifosa Iskandar" />
+            </div>
+            <div className='flex mt-4 mx-4 cursor-pointer'>
+                <BsGithub className='mx-2 text-2xl hover:text-[#DFDFDF]' />
+            </div>
+            <div className='md:text-center mt-[2rem] ml-4 md:ml-0 transition-all ease-in-out duration-300'>
+                <span className="">&copy;2022 Team C22-039. All Rights Reserved</span>
+            </div>
         </div>
-        <div className='flex mt-4 mx-4 cursor-pointer'>
-            <BsGithub className='mx-2 text-2xl text-white hover:text-[#DFDFDF]' />
-        </div>
-        <Copyright />
     </>
 )
