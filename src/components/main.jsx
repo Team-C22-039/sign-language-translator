@@ -6,7 +6,7 @@ import SpeechRecognition, {
 function Main() {
   const [isListening, setIsListening] = useState(false);
   const [textResult, setTextResult] = useState("");
-  const [imResult, setImageResult] = useState("../images/catto.jpg");
+  const [imResult, setImageResult] = useState("../images/Dummy.png");
 
   const {
     transcript,
