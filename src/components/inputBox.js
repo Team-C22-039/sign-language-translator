@@ -28,10 +28,7 @@ export default function InputBox(props) {
             flex items-center justify-end border-t-2 border-t-slate-300 flex-grow-0">
                 <div>
                     <BsFillVolumeUpFill className="text-[30px] md:text-4xl text-black cursor-pointer hover:text-[#54494B] active:text-[#F4B701]
-                    transition-all ease-in duration-200" onClick={() => {
-                            speechHandler(msg)
-                            localStorage.setItem('InputText', msg.text)
-                        }} />
+                    transition-all ease-in duration-200" onClick={() => speechHandler(msg)} />
                 </div>
                 <MicInput />
             </div>
