@@ -52,13 +52,18 @@ function Main() {
   const convertToSign = (word) => {
     var textSentence = word;
     textSentence
+      .toUpperCase()
       .split("")
       .filter((letter) => /[a-z ]/i.test(letter))
       .forEach((letter, index) => {
         setTimeout((_) => {
           letter = letter !== " " ? letter : "Space";
           setTextResult(letter);
-          setImageResult(`../images/Alphabet-img/` + letter + `.jpg`);
+          setImageResult(
+            `https://alphabetizer.flap.tv/lists/images/Sign_Language_` +
+              letter +
+              `.jpg`
+          );
         }, index * 1000);
       });
   };
