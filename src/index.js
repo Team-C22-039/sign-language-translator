@@ -25,7 +25,7 @@ const main = ReactDOM.createRoot(document.getElementById("content"));
 
 main.render(
     <React.StrictMode>
-        <h1 className='my-[7rem] font-Roboto text-center text-lg md:text-[5rem]'>Audio ke Bahasa Isyarat</h1>
+        <h1 className='md:my-[4rem] xl:my-[7rem] font-Roboto text-center md:text-[3rem] xl:text-[5rem]'>Audio ke Bahasa Isyarat</h1>
         <div>
             <FormSubmit />
             <SignRecognition />

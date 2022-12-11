@@ -47,6 +47,7 @@ export default function MicInput(props) {
 		<>
 			<button
 				id="mic-input"
+				type="button"
 				className="
             transition-all 0.3 ease-linear
             h-fit w-fit text-white p-4 bg-transparent cursor-pointer rounded-lg inline-block relative outline-none
