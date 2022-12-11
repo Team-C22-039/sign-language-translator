@@ -8,11 +8,10 @@ export default function InputBox(props) {
 	$(content).addClass("container box-content mx-auto my-10");
 
 	const [myText, setMyText] = useState("");
-	const msg = new SpeechSynthesisUtterance();
+	const msg = new SpeechSynthesisUtterance(myText);
 
 	const speechHandler = (msg) => {
 		msg.lang = "id-ID";
-		msg.text = myText.value;
 		window.speechSynthesis.speak(msg);
 	};
 
