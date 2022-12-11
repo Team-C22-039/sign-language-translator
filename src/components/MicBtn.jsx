@@ -31,7 +31,7 @@ export default function MicInput(props) {
 			startListening();
 			$("#mic-logo").addClass("text-[#FF1212]");
 			$("#mic-logo").removeClass("text-white");
-		} else if (!isListening) {
+		} else {
 			SpeechRecognition.stopListening();
 			$("#mic-logo").removeClass("text-[#FF1212]");
 			$("#mic-logo").addClass("text-white");

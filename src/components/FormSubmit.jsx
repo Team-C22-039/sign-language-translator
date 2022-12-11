@@ -14,11 +14,26 @@ export default function FormSubmit() {
 			.filter((letter) => /[a-z ]/i.test(letter))
 			.forEach((letter, index) => {
 				setTimeout((_) => {
-					letter = letter !== " " ? letter : "Space";
+					letter = letter !== " " ? letter : "SPACE";
+					if (letter === "SPACE") {
+						setTextInput(letter);
+						setImgResult("../../image/Space.jpg");
+						return;
+					}
 					setTextInput(letter);
 					setImgResult(
 						`https://alphabetizer.flap.tv/lists/images/Sign_Language_${letter}.jpg`
 					);
+					// letter = letter !== " " ? letter : "Space";
+					// setTextInput(letter);
+					// if (letter !== " ") {
+					// 	setImgResult(
+					// 		`https://alphabetizer.flap.tv/lists/images/Sign_Language_${letter}.jpg`
+					// 	);
+					// } else {
+					// 	setImgResult("../../images/Space.jpg");
+					// 	setImgResult(`https://i.ibb.co/R9hTX9m/Space.jpg`);
+					// }
 				}, index * 1000);
 			});
 	};

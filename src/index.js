@@ -51,7 +51,9 @@ footer.render(
                 <Creator creator="Grivia Trifosa Iskandar" />
             </div>
             <div className='flex mt-4 mx-4 cursor-pointer'>
-                <BsGithub className='mx-2 text-2xl hover:text-[#DFDFDF]' href="https://github.com/Team-C22-039/sign-language-translator.git" />
+                <a href="https://github.com/Team-C22-039/sign-language-translator/tree/development">
+                    <BsGithub className='mx-2 text-2xl hover:text-[#DFDFDF]' />
+                </a>
             </div>
             <div className='md:text-center mt-[2rem] ml-4 md:ml-0 transition-all ease-in-out duration-300'>
                 <span className="">&copy;2022 Team C22-039. All Rights Reserved</span>
