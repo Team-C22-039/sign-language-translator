@@ -10,6 +10,10 @@ export default function MicInput(props) {
 	const inputText = document.querySelector("#text-input");
 	const [isListening, setIsListening] = useState(false);
 
+	useEffect(() => {
+		speechHandler();
+	}, [isListening]);
+
 	const {
 		transcript,
 		listening,
@@ -34,10 +38,6 @@ export default function MicInput(props) {
 			$(inputText).val(transcript);
 		}
 	};
-
-	useEffect(() => {
-		speechHandler();
-	}, [isListening]);
 
 	if (!browserSupportsSpeechRecognition) {
 		alert("Browser not supported with SpeechRecognition");
