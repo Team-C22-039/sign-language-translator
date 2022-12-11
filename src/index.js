@@ -4,11 +4,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BsGithub } from "react-icons/bs"
 import Switch from './components/ModeSwtich'
-import ImageOutput from './components/ImageOutput'
 import Creator from './components/Creator'
-import InputBox from './components/InputBox'
 import MainContent from './components/SIBIPage'
 import BgWave from './components/FooterWave'
+import FormSubmit from './components/FormSubmit'
+import SignRecognition from './components/SignRecognition'
 
 /* eslint-disable */
 const header = ReactDOM.createRoot(document.getElementById('head'));
@@ -16,7 +16,7 @@ const header = ReactDOM.createRoot(document.getElementById('head'));
 header.render(
     <>
         <h2 id='product-name' className='font-Poppins text-white
-        text-sm sm:text-xl md:text-3xl transition-all ease-in duration-200 my-1 float-left'>Sign Language Translator</h2>
+        text-sm sm:text-xl md:text-3xl transition-all ease-in duration-200 my-1 float-left'>Sign Language Translator (ASL)</h2>
         <Switch />
     </>
 )
@@ -25,9 +25,10 @@ const main = ReactDOM.createRoot(document.getElementById("content"));
 
 main.render(
     <React.StrictMode>
-        <div className='flex flex-col xl:flex-row sm:gap-x-12 gap-y-[40px] justify-evenly transition-all ease-in duration-200'>
-            <ImageOutput />
-            <InputBox />
+        <h1 className='my-[7rem] font-Roboto text-center text-lg md:text-[5rem]'>Audio ke Bahasa Isyarat</h1>
+        <div>
+            <FormSubmit />
+            <SignRecognition />
         </div>
         <hr className="border-2 rounded-md mt-64 border-slate-500 mx-auto w-[85vw]" />
         <h1 className="my-12 text-center text-3xl lg:text-4xl xl:text-6xl font-Poppins">Bahasa Isyarat Indonesia</h1>
