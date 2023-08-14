@@ -1,3 +1,7 @@
+![React](https://img.shields.io/badge/React-blue?logo=react&labelColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-cyan?logo=tailwindcss&labelColor=white)
+![TensorflowJS](https://img.shields.io/badge/TensorflowJS-orange?logo=tensorflow&labelColor=white)
+
 # ASL Sign Language Converter
 
 Ini adalah Capstone Proyek Akhir Studi Independen Dicoding Batch 3.
